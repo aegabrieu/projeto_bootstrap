@@ -1,5 +1,12 @@
+/*pagina home*/
 .bloco{background-color: #09309c; height: 50vh;}
 .bloco img{min-width: 800px;}
 .W-200{width: 200px;}
 .w-500{width: 500px;}
 .social a:hover{color: #09309c; transform: scale(1,2);}
+
+/*efeito meno ativo*/
+.active{border-bottom: 1px solid #fff; }
+
+/* página cadastro */
+.altura{height: 300px; overflow-y:scroll;}
