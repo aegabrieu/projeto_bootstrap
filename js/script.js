@@ -119,10 +119,76 @@ let escolaridade = document.querySelector("input[name=escolaridade]")
 let btnescolaridade = document.querySelector("#btnescolaridade")
 
 btnescolaridade.addEventListener("click",(evento)=>{
-    console.log(evento)
+    // console.log(evento)
     evento.preventDefault(valor)
-    valor.preventDefault()  //função impede o comportamento padrao do botao
+    // valor.preventDefault()  //função impede o comportamento padrao do botao
 
 
     console.log(escolaridade[0])
+    for(let itens of escolaridade){
+        // console.log(itens)
+        if(itens.checked){
+            alert(`Sua escolaridade é $ {itens.value}`)
+
+            // alert("Sua escolaridade é "+itens.value)
+            // confirm("tem certeza ?")
+            // console.log(itens)
+        }
+        
+    }
+})
+
+let escolha = document.querySelector("#escolha")
+let contrato = document.querySelector("#contrato")
+
+contrato.classList.add("d-none")
+
+escolha.addEventListener("change", ()=>{
+    if(escolha.checked){
+        contrato.classList.remove("d-none")
+        contrato.classList.add("d-block")
+        // alert("Obrigado por concordar! ")
+    }    
+    else{
+        contrato.classList.remove("d-block")
+        contrato.classList.add("d-none")
+        // alert("Aceite o contrato novamente !")
+    }
+
+
+})
+
+let concordo = document.querySelector("#concordo")
+
+concordo.addEventListener("change", ()=>{
+    if(concordo.checked){
+        alert("obrigado pela escolha")
+    }
+    else{
+        alert("aceite novamente")
+        let mensagem = prompt("Porque você desmarcou ?") 
+        //  cria uma caixa de texto
+    }
+
+
+})
+
+let trabalho = document.querySelector(".form-select")
+trabalho.addEventListener("change", ()=>{
+    // console.log(trabalho,options)
+
+    for(let itens of trabalho){
+        if(itens.selected){
+            // console.log(itens.value)
+            if(itens.value == "RH"){
+                trabalho.style.backgroundColor = "cyan"
+            }
+            if(itens.value == "tecnologia"){
+                trabalho.style.backgroundColor = "brown"
+            }
+            if(itens.value == "financeiro"){
+                trabalho.style.backgroundColor = "purple"
+            }
+        }
+    }
 })
